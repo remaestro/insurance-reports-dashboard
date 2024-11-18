@@ -1,0 +1,9 @@
+{
+  "name": "Node.js Environment",
+  "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:18",
+  "postCreateCommand": "node -v && npm -v",
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
+}

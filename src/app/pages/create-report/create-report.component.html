@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Create New Report</h3>
+      <form (ngSubmit)="onSubmit()">
+        <!-- Report Title -->
+        <div class="form-group">
+          <label for="reportTitle">Report Title</label>
+          <input type="text" class="form-control" id="reportTitle" [(ngModel)]="reportTitle" name="reportTitle" required>
+        </div>
+
+        <!-- Report Description -->
+        <div class="form-group">
+          <label for="reportDescription">Description</label>
+          <textarea class="form-control" id="reportDescription" [(ngModel)]="reportDescription" name="reportDescription" rows="3"></textarea>
+        </div>
+
+        <!-- Search and Assign Modelers -->
+        <div class="form-group">
+          <label for="searchModelers">Search and Assign Modelers</label>
+          <input
+            type="text"
+            class="form-control"
+            id="searchModelers"
+            [(ngModel)]="searchModeler"
+            (input)="filterModelers()"
+            placeholder="Search modelers by name"
+          />
+          <ul *ngIf="filteredModelers.length > 0" class="list-group mt-2">
+            <li
+              *ngFor="let user of filteredModelers"
+              class="list-group-item list-group-item-action"
+              (click)="addModeler(user)"
+            >
+              {{ user.fullName }}
+            </li>
+          </ul>
+          <input
+            type="text"
+            class="form-control mt-2"
+            [value]="modelersDisplay"
+            readonly
+          />
+        </div>
+
+        <!-- Search and Assign Auditors -->
+        <div class="form-group">
+          <label for="searchAuditors">Search and Assign Auditors</label>
+          <input
+            type="text"
+            class="form-control"
+            id="searchAuditors"
+            [(ngModel)]="searchAuditor"
+            (input)="filterAuditors()"
+            placeholder="Search auditors by name"
+          />
+          <ul *ngIf="filteredAuditors.length > 0" class="list-group mt-2">
+            <li
+              *ngFor="let user of filteredAuditors"
+              class="list-group-item list-group-item-action"
+              (click)="addAuditor(user)"
+            >
+              {{ user.fullName }}
+            </li>
+          </ul>
+          <input
+            type="text"
+            class="form-control mt-2"
+            [value]="auditorsDisplay"
+            readonly
+          />
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mt-3">
+          <button type="button" class="btn btn-secondary" (click)="saveDraft()" [disabled]="!canSave()">Save as Draft</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!canSave()">Submit for Review</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

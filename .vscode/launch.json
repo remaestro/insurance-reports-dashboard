@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+       {
+          "type": "chrome",
+          "request": "launch",
+          "name": "Launch Chrome against localhost",
+          "url": "https://studious-space-rotary-phone-4gvg6x5pqgg3jp9w-4200.app.github.dev/",
+          "webRoot": "${workspaceFolder}",
+          "trace": true,
+          "sourceMaps": true,
+          "sourceMapPathOverrides": {
+             "webpack:/*": "${webRoot}/*"
+          }
+       }
+    ]
+ }
+ 

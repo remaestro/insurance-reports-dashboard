@@ -1,171 +1,88 @@
-<div class="row">
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-globe text-warning"></i>
-            </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Capacity</p>
-              <p class="card-title">150GB
-                <p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="fa fa-refresh"></i> Update Now
+<div class="container">
+  <!-- Dashboard Header -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="dashboard-title">Dashboard</h2>
+    </div>
+  </div>
+
+  <!-- Report Status Tabs -->
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="nav nav-tabs" id="reportTabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" 
+             [ngClass]="{'active': selectedTab === 'All'}" 
+             (click)="filterReports('All')" 
+             id="all-tab" 
+             data-toggle="tab" 
+             href="#all" 
+             role="tab" 
+             aria-controls="all"
+             aria-selected="true">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [ngClass]="{'active': selectedTab === 'Draft'}" 
+             (click)="filterReports('Draft')" 
+             id="draft-tab" 
+             data-toggle="tab" 
+             href="#draft" 
+             role="tab" 
+             aria-controls="draft"
+             aria-selected="false">Draft</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [ngClass]="{'active': selectedTab === 'Pending'}" 
+             (click)="filterReports('Pending')" 
+             id="pending-tab" 
+             data-toggle="tab" 
+             href="#pending" 
+             role="tab" 
+             aria-controls="pending"
+             aria-selected="false">Pending</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [ngClass]="{'active': selectedTab === 'Approved'}" 
+             (click)="filterReports('Approved')" 
+             id="approved-tab" 
+             data-toggle="tab" 
+             href="#approved" 
+             role="tab" 
+             aria-controls="approved"
+             aria-selected="false">Approved</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [ngClass]="{'active': selectedTab === 'Rejected'}" 
+             (click)="filterReports('Rejected')" 
+             id="rejected-tab" 
+             data-toggle="tab" 
+             href="#rejected" 
+             role="tab" 
+             aria-controls="rejected"
+             aria-selected="false">Rejected</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="reportTabContent">
+        <!-- Tab Content (Filtered Report Table) -->
+        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+          <app-table-cmp [tableData]="filteredTableData"></app-table-cmp>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-money-coins text-success"></i>
-            </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Revenue</p>
-              <p class="card-title">$ 1,345
-                <p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="fa fa-calendar-o"></i> Last day
-        </div>
-      </div>
+
+  <!-- Actions for Modeler and Auditor -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <button class="btn btn-primary" (click)="createReport()">Create New Report</button>
     </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-vector text-danger"></i>
-            </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Errors</p>
-              <p class="card-title">23
-                <p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="fa fa-clock-o"></i> In the last hour
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-favourite-28 text-primary"></i>
-            </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Followers</p>
-              <p class="card-title">+45K
-                <p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="fa fa-refresh"></i> Update now
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="card ">
-      <div class="card-header ">
-        <h5 class="card-title">Users Behavior</h5>
-        <p class="card-category">24 Hours performance</p>
-      </div>
-      <div class="card-body ">
-        <canvas id=chartHours width="400" height="100"></canvas>
-      </div>
-      <div class="card-footer ">
-        <hr>
-        <div class="stats">
-          <i class="fa fa-history"></i> Updated 3 minutes ago
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <div class="card ">
-      <div class="card-header ">
-        <h5 class="card-title">Email Statistics</h5>
-        <p class="card-category">Last Campaign Performance</p>
-      </div>
-      <div class="card-body ">
-        <canvas id="chartEmail"></canvas>
-      </div>
-      <div class="card-footer ">
-        <div class="legend">
-          <i class="fa fa-circle text-primary"></i> Opened
-          <i class="fa fa-circle text-warning"></i> Read
-          <i class="fa fa-circle text-danger"></i> Deleted
-          <i class="fa fa-circle text-gray"></i> Unopened
-        </div>
-        <hr>
-        <div class="stats">
-          <i class="fa fa-calendar"></i> Number of emails sent
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-8">
-    <div class="card card-chart">
-      <div class="card-header">
-        <h5 class="card-title">NASDAQ: AAPL</h5>
-        <p class="card-category">Line Chart with Points</p>
-      </div>
-      <div class="card-body">
-        <canvas id="speedChart" width="400" height="100"></canvas>
-      </div>
-      <div class="card-footer">
-        <div class="chart-legend">
-          <i class="fa fa-circle text-info"></i> Tesla Model S
-          <i class="fa fa-circle text-warning"></i> BMW 5 Series
-        </div>
-        <hr/>
-        <div class="card-stats">
-          <i class="fa fa-check"></i> Data information certified
-        </div>
-      </div>
+    <div class="col-md-6 text-right">
+      <button *ngIf="isAuditor" class="btn btn-success" (click)="approveReport()">Approve</button>
+      <button *ngIf="isAuditor" class="btn btn-danger" (click)="rejectReport()">Reject</button>
     </div>
   </div>
 </div>

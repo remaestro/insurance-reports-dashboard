@@ -29,7 +29,8 @@
               "node_modules/ngx-toastr/toastr.css",
               "src/assets/css/demo.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "sourceMap": true
           },
           "configurations": {
             "production": {
@@ -136,6 +137,11 @@
             "devServerTarget": "pd-free-angularcli:serve"
           }
         },
+        "build": {
+          "options": {
+            "sourceMap": true
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -152,7 +158,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

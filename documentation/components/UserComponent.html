@@ -1,0 +1,600 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>paper-dashboard-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">paper-dashboard-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  UserComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/user/user.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">moduleId</td>
+                <td class="col-md-9"><code>module.id</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>user-cmp</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>user.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="10"
+                                    class="link-to-prism">src/app/pages/user/user.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+    selector: &#x27;user-cmp&#x27;,
+    moduleId: module.id,
+    templateUrl: &#x27;user.component.html&#x27;
+})
+
+export class UserComponent implements OnInit{
+    ngOnInit(){
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+    &lt;div class&#x3D;&quot;card card-user&quot;&gt;
+      &lt;div class&#x3D;&quot;image&quot;&gt;
+        &lt;img src&#x3D;&quot;assets/img/damir-bosnjak.jpg&quot; alt&#x3D;&quot;...&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;div class&#x3D;&quot;author&quot;&gt;
+          &lt;a href&#x3D;&quot;#&quot;&gt;
+            &lt;img class&#x3D;&quot;avatar border-gray&quot; src&#x3D;&quot;assets/img/mike.jpg&quot; alt&#x3D;&quot;...&quot;&gt;
+            &lt;h5 class&#x3D;&quot;title&quot;&gt;Chet Faker&lt;/h5&gt;
+          &lt;/a&gt;
+          &lt;p class&#x3D;&quot;description&quot;&gt;
+            @chetfaker
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;p class&#x3D;&quot;description text-center&quot;&gt;
+          &quot;I like the way you work it
+          &lt;br&gt; No diggity
+          &lt;br&gt; I wanna bag it up&quot;
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+        &lt;hr&gt;
+        &lt;div class&#x3D;&quot;button-container&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-3 col-md-6 col-6 ml-auto&quot;&gt;
+              &lt;h5&gt;12
+                &lt;br&gt;
+                &lt;small&gt;Files&lt;/small&gt;
+              &lt;/h5&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-lg-4 col-md-6 col-6 ml-auto mr-auto&quot;&gt;
+              &lt;h5&gt;2GB
+                &lt;br&gt;
+                &lt;small&gt;Used&lt;/small&gt;
+              &lt;/h5&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-lg-3 mr-auto&quot;&gt;
+              &lt;h5&gt;24,6$
+                &lt;br&gt;
+                &lt;small&gt;Spent&lt;/small&gt;
+              &lt;/h5&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header&quot;&gt;
+        &lt;h4 class&#x3D;&quot;card-title&quot;&gt;Team Members&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;ul class&#x3D;&quot;list-unstyled team-members&quot;&gt;
+          &lt;li&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-2 col-2&quot;&gt;
+                &lt;div class&#x3D;&quot;avatar&quot;&gt;
+                  &lt;img src&#x3D;&quot;assets/img/faces/ayo-ogunseinde-2.jpg&quot; alt&#x3D;&quot;Circle Image&quot; class&#x3D;&quot;img-circle img-no-padding img-responsive&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-7 col-7&quot;&gt;
+                DJ Khaled
+                &lt;br /&gt;
+                &lt;span class&#x3D;&quot;text-muted&quot;&gt;
+                  &lt;small&gt;Offline&lt;/small&gt;
+                &lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-3 col-3 text-right&quot;&gt;
+                &lt;button class&#x3D;&quot;btn btn-sm btn-outline-success btn-round btn-icon&quot;&gt;&lt;i class&#x3D;&quot;fa fa-envelope&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-2 col-2&quot;&gt;
+                &lt;div class&#x3D;&quot;avatar&quot;&gt;
+                  &lt;img src&#x3D;&quot;assets/img/faces/joe-gardner-2.jpg&quot; alt&#x3D;&quot;Circle Image&quot; class&#x3D;&quot;img-circle img-no-padding img-responsive&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-7 col-7&quot;&gt;
+                Creative Tim
+                &lt;br /&gt;
+                &lt;span class&#x3D;&quot;text-success&quot;&gt;
+                  &lt;small&gt;Available&lt;/small&gt;
+                &lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-3 col-3 text-right&quot;&gt;
+                &lt;button class&#x3D;&quot;btn btn-sm btn-outline-success btn-round btn-icon&quot;&gt;&lt;i class&#x3D;&quot;fa fa-envelope&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-2 col-2&quot;&gt;
+                &lt;div class&#x3D;&quot;avatar&quot;&gt;
+                  &lt;img src&#x3D;&quot;assets/img/faces/clem-onojeghuo-2.jpg&quot; alt&#x3D;&quot;Circle Image&quot; class&#x3D;&quot;img-circle img-no-padding img-responsive&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-ms-7 col-7&quot;&gt;
+                Flume
+                &lt;br /&gt;
+                &lt;span class&#x3D;&quot;text-danger&quot;&gt;
+                  &lt;small&gt;Busy&lt;/small&gt;
+                &lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-3 col-3 text-right&quot;&gt;
+                &lt;button class&#x3D;&quot;btn btn-sm btn-outline-success btn-round btn-icon&quot;&gt;&lt;i class&#x3D;&quot;fa fa-envelope&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+    &lt;div class&#x3D;&quot;card card-user&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header&quot;&gt;
+        &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Edit Profile&lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;form&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-5 pr-1&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;Company (disabled)&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; disabled&#x3D;&quot;&quot; placeholder&#x3D;&quot;Company&quot; value&#x3D;&quot;Creative Code Inc.&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-3 px-1&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;Username&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Username&quot; value&#x3D;&quot;michael23&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-4 pl-1&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;exampleInputEmail1&quot;&gt;Email address&lt;/label&gt;
+                &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Email&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-6 pr-1&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;First Name&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Company&quot; value&#x3D;&quot;Chet&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-6 pl-1&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;Last Name&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Last Name&quot; value&#x3D;&quot;Faker&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;Address&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Home Address&quot; value&#x3D;&quot;Melbourne, Australia&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-4 pr-1&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;City&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;City&quot; value&#x3D;&quot;Melbourne&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-4 px-1&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;Country&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Country&quot; value&#x3D;&quot;Australia&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-4 pl-1&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;Postal Code&lt;/label&gt;
+                &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;ZIP Code&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label&gt;About Me&lt;/label&gt;
+                &lt;textarea class&#x3D;&quot;form-control textarea&quot;&gt;Oh so, your weak rhyme You doubt I&#x27;ll bother, reading into it&lt;/textarea&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;update ml-auto mr-auto&quot;&gt;
+              &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary btn-round&quot;&gt;Update Profile&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-md-4">    <div class="card card-user">      <div class="image">        <img src="assets/img/damir-bosnjak.jpg" alt="...">      </div>      <div class="card-body">        <div class="author">          <a href="#">            <img class="avatar border-gray" src="assets/img/mike.jpg" alt="...">            <h5 class="title">Chet Faker</h5>          </a>          <p class="description">            @chetfaker          </p>        </div>        <p class="description text-center">          "I like the way you work it          <br> No diggity          <br> I wanna bag it up"        </p>      </div>      <div class="card-footer">        <hr>        <div class="button-container">          <div class="row">            <div class="col-lg-3 col-md-6 col-6 ml-auto">              <h5>12                <br>                <small>Files</small>              </h5>            </div>            <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">              <h5>2GB                <br>                <small>Used</small>              </h5>            </div>            <div class="col-lg-3 mr-auto">              <h5>24,6$                <br>                <small>Spent</small>              </h5>            </div>          </div>        </div>      </div>    </div>    <div class="card">      <div class="card-header">        <h4 class="card-title">Team Members</h4>      </div>      <div class="card-body">        <ul class="list-unstyled team-members">          <li>            <div class="row">              <div class="col-md-2 col-2">                <div class="avatar">                  <img src="assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">                </div>              </div>              <div class="col-md-7 col-7">                DJ Khaled                <br />                <span class="text-muted">                  <small>Offline</small>                </span>              </div>              <div class="col-md-3 col-3 text-right">                <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>              </div>            </div>          </li>          <li>            <div class="row">              <div class="col-md-2 col-2">                <div class="avatar">                  <img src="assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">                </div>              </div>              <div class="col-md-7 col-7">                Creative Tim                <br />                <span class="text-success">                  <small>Available</small>                </span>              </div>              <div class="col-md-3 col-3 text-right">                <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>              </div>            </div>          </li>          <li>            <div class="row">              <div class="col-md-2 col-2">                <div class="avatar">                  <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">                </div>              </div>              <div class="col-ms-7 col-7">                Flume                <br />                <span class="text-danger">                  <small>Busy</small>                </span>              </div>              <div class="col-md-3 col-3 text-right">                <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>              </div>            </div>          </li>        </ul>      </div>    </div>  </div>  <div class="col-md-8">    <div class="card card-user">      <div class="card-header">        <h5 class="card-title">Edit Profile</h5>      </div>      <div class="card-body">        <form>          <div class="row">            <div class="col-md-5 pr-1">              <div class="form-group">                <label>Company (disabled)</label>                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">              </div>            </div>            <div class="col-md-3 px-1">              <div class="form-group">                <label>Username</label>                <input type="text" class="form-control" placeholder="Username" value="michael23">              </div>            </div>            <div class="col-md-4 pl-1">              <div class="form-group">                <label for="exampleInputEmail1">Email address</label>                <input type="email" class="form-control" placeholder="Email">              </div>            </div>          </div>          <div class="row">            <div class="col-md-6 pr-1">              <div class="form-group">                <label>First Name</label>                <input type="text" class="form-control" placeholder="Company" value="Chet">              </div>            </div>            <div class="col-md-6 pl-1">              <div class="form-group">                <label>Last Name</label>                <input type="text" class="form-control" placeholder="Last Name" value="Faker">              </div>            </div>          </div>          <div class="row">            <div class="col-md-12">              <div class="form-group">                <label>Address</label>                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">              </div>            </div>          </div>          <div class="row">            <div class="col-md-4 pr-1">              <div class="form-group">                <label>City</label>                <input type="text" class="form-control" placeholder="City" value="Melbourne">              </div>            </div>            <div class="col-md-4 px-1">              <div class="form-group">                <label>Country</label>                <input type="text" class="form-control" placeholder="Country" value="Australia">              </div>            </div>            <div class="col-md-4 pl-1">              <div class="form-group">                <label>Postal Code</label>                <input type="number" class="form-control" placeholder="ZIP Code">              </div>            </div>          </div>          <div class="row">            <div class="col-md-12">              <div class="form-group">                <label>About Me</label>                <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I\'ll bother, reading into it</textarea>              </div>            </div>          </div>          <div class="row">            <div class="update ml-auto mr-auto">              <button type="submit" class="btn btn-primary btn-round">Update Profile</button>            </div>          </div>        </form>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminLayoutComponent', 'selector': 'app-admin-layout'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateReportComponent', 'selector': 'app-create-report'},{'name': 'DashboardComponent', 'selector': 'dashboard-cmp'},{'name': 'FixedPluginComponent', 'selector': 'fixedplugin-cmp'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'IconsComponent', 'selector': 'icons-cmp'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapsComponent', 'selector': 'maps-cmp'},{'name': 'NavbarComponent', 'selector': 'navbar-cmp'},{'name': 'NotificationsComponent', 'selector': 'notifications-cmp'},{'name': 'SidebarComponent', 'selector': 'sidebar-cmp'},{'name': 'TableComponent', 'selector': 'app-table-cmp'},{'name': 'TypographyComponent', 'selector': 'typography-cmp'},{'name': 'UpgradeComponent', 'selector': 'upgrade-cmp'},{'name': 'UserComponent', 'selector': 'user-cmp'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'UserComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

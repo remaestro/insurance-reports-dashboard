@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- Login Section -->
+      <div class="card card-user" *ngIf="showLogin">
+        <div class="card-header text-center">
+          <h5 class="card-title">Login</h5>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onLogin()">
+            <div class="form-group">
+              <label for="loginUsername">Username</label>
+              <input type="text" id="loginUsername" class="form-control" placeholder="Enter Username" [(ngModel)]="loginUsername" name="loginUsername" required>
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" class="form-control" placeholder="Enter Password" [(ngModel)]="loginPassword" name="loginPassword" required>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-round">Login</button>
+            </div>
+          </form>
+          <div class="text-center mt-3">
+            <button (click)="toggleForms()" class="btn btn-link">Create an Account</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign-Up Section -->
+      <div class="card card-user" *ngIf="!showLogin">
+        <div class="card-header text-center">
+          <h5 class="card-title">Create an Account</h5>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSignUp()">
+            <div class="form-group">
+              <label for="signUpFullName">Full Name</label>
+              <input type="text" id="signUpFullName" class="form-control" placeholder="Enter Full Name" [(ngModel)]="signUpFullName" name="signUpFullName" required>
+            </div>
+            <div class="form-group">
+              <label for="signUpUsername">Username</label>
+              <input type="text" id="signUpUsername" class="form-control" placeholder="Choose a Username" [(ngModel)]="signUpUsername" name="signUpUsername" required>
+            </div>
+            <div class="form-group">
+              <label for="signUpEmail">Email</label>
+              <input type="email" id="signUpEmail" class="form-control" placeholder="Enter Email Address" [(ngModel)]="signUpEmail" name="signUpEmail" required>
+            </div>
+            <div class="form-group">
+              <label for="signUpPassword">Password</label>
+              <input type="password" id="signUpPassword" class="form-control" placeholder="Create Password" [(ngModel)]="signUpPassword" name="signUpPassword" required>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-success btn-round">Sign Up</button>
+            </div>
+          </form>
+          <div class="text-center mt-3">
+            <button (click)="toggleForms()" class="btn btn-link">Already have an account? Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

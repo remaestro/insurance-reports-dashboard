@@ -1,0 +1,415 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>paper-dashboard-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">paper-dashboard-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TypographyComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/typography/typography.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">moduleId</td>
+                <td class="col-md-9"><code>module.id</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>typography-cmp</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>typography.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+    selector: &#x27;typography-cmp&#x27;,
+    moduleId: module.id,
+    templateUrl: &#x27;typography.component.html&#x27;
+})
+
+export class TypographyComponent{}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header&quot;&gt;
+        &lt;h5 class&#x3D;&quot;title&quot;&gt;Paper Table Heading&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;category&quot;&gt;Created using Montserrat Font Family&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;h1&gt;
+            &lt;span&gt;Header 1&lt;/span&gt;The Life of Paper Dashboard &lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;h2&gt;
+            &lt;span&gt;Header 2&lt;/span&gt;The Life of Paper Dashboard &lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;h3&gt;
+            &lt;span&gt;Header 3&lt;/span&gt;The Life of Paper Dashboard &lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;h4&gt;
+            &lt;span&gt;Header 4&lt;/span&gt;The Life of Paper Dashboard &lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;h5&gt;
+            &lt;span&gt;Header 5&lt;/span&gt;The Life of Paper Dashboard &lt;/h5&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;h6&gt;
+            &lt;span&gt;Header 6&lt;/span&gt;The Life of Paper Dashboard &lt;/h6&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;p&gt;
+            &lt;span&gt;Paragraph&lt;/span&gt;
+            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;span&gt;Quote&lt;/span&gt;
+          &lt;blockquote&gt;
+            &lt;p class&#x3D;&quot;blockquote blockquote-primary&quot;&gt;
+              &quot;I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.&quot;
+              &lt;br&gt;
+              &lt;br&gt;
+              &lt;small&gt;
+                - Noaa
+              &lt;/small&gt;
+            &lt;/p&gt;
+          &lt;/blockquote&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;span&gt;Muted Text&lt;/span&gt;
+          &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;span&gt;Primary Text&lt;/span&gt;
+          &lt;p class&#x3D;&quot;text-primary&quot;&gt;
+            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;span&gt;Info Text&lt;/span&gt;
+          &lt;p class&#x3D;&quot;text-info&quot;&gt;
+            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;span&gt;Success Text&lt;/span&gt;
+          &lt;p class&#x3D;&quot;text-success&quot;&gt;
+            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;span&gt;Warning Text&lt;/span&gt;
+          &lt;p class&#x3D;&quot;text-warning&quot;&gt;
+            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;span&gt;Danger Text&lt;/span&gt;
+          &lt;p class&#x3D;&quot;text-danger&quot;&gt;
+            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;typography-line&quot;&gt;
+          &lt;h2&gt;
+            &lt;span&gt;Small Tag&lt;/span&gt;
+            Header with small subtitle
+            &lt;br&gt;
+            &lt;small&gt;Use &quot;small&quot; tag for the headers&lt;/small&gt;
+          &lt;/h2&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-md-12">    <div class="card">      <div class="card-header">        <h5 class="title">Paper Table Heading</h5>        <p class="category">Created using Montserrat Font Family</p>      </div>      <div class="card-body">        <div class="typography-line">          <h1>            <span>Header 1</span>The Life of Paper Dashboard </h1>        </div>        <div class="typography-line">          <h2>            <span>Header 2</span>The Life of Paper Dashboard </h2>        </div>        <div class="typography-line">          <h3>            <span>Header 3</span>The Life of Paper Dashboard </h3>        </div>        <div class="typography-line">          <h4>            <span>Header 4</span>The Life of Paper Dashboard </h4>        </div>        <div class="typography-line">          <h5>            <span>Header 5</span>The Life of Paper Dashboard </h5>        </div>        <div class="typography-line">          <h6>            <span>Header 6</span>The Life of Paper Dashboard </h6>        </div>        <div class="typography-line">          <p>            <span>Paragraph</span>            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.          </p>        </div>        <div class="typography-line">          <span>Quote</span>          <blockquote>            <p class="blockquote blockquote-primary">              "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."              <br>              <br>              <small>                - Noaa              </small>            </p>          </blockquote>        </div>        <div class="typography-line">          <span>Muted Text</span>          <p class="text-muted">            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...          </p>        </div>        <div class="typography-line">          <span>Primary Text</span>          <p class="text-primary">            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</p>        </div>        <div class="typography-line">          <span>Info Text</span>          <p class="text-info">            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>        </div>        <div class="typography-line">          <span>Success Text</span>          <p class="text-success">            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>        </div>        <div class="typography-line">          <span>Warning Text</span>          <p class="text-warning">            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...          </p>        </div>        <div class="typography-line">          <span>Danger Text</span>          <p class="text-danger">            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>        </div>        <div class="typography-line">          <h2>            <span>Small Tag</span>            Header with small subtitle            <br>            <small>Use "small" tag for the headers</small>          </h2>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminLayoutComponent', 'selector': 'app-admin-layout'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CreateReportComponent', 'selector': 'app-create-report'},{'name': 'DashboardComponent', 'selector': 'dashboard-cmp'},{'name': 'FixedPluginComponent', 'selector': 'fixedplugin-cmp'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'IconsComponent', 'selector': 'icons-cmp'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapsComponent', 'selector': 'maps-cmp'},{'name': 'NavbarComponent', 'selector': 'navbar-cmp'},{'name': 'NotificationsComponent', 'selector': 'notifications-cmp'},{'name': 'SidebarComponent', 'selector': 'sidebar-cmp'},{'name': 'TableComponent', 'selector': 'app-table-cmp'},{'name': 'TypographyComponent', 'selector': 'typography-cmp'},{'name': 'UpgradeComponent', 'selector': 'upgrade-cmp'},{'name': 'UserComponent', 'selector': 'user-cmp'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TypographyComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TypographyComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
