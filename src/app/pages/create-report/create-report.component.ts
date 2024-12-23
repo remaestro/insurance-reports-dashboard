@@ -1,6 +1,8 @@
 import { AssignedUsers } from './../models/assignedAuditors';
 import { Component, OnInit } from '@angular/core';
 import { AuthApiService } from '../../auth/authApi.service';
+import { ReportApiService } from './report-api.service';
+import { map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-create-report',
@@ -19,7 +21,7 @@ export class CreateReportComponent implements OnInit {
   searchAuditor: string = ''; // Search term for auditors
   filteredAuditors: Array<AssignedUsers> = []; // Filtered list of auditors
 
-  constructor(private authApiService: AuthApiService) {}
+  constructor(private reportApiService : ReportApiService, private authApiService: AuthApiService) {}
 
   ngOnInit() {
     // Fetch users on component initialization
@@ -93,11 +95,22 @@ export class CreateReportComponent implements OnInit {
   }
 
   saveDraft() {
-    console.log('Report saved as draft:', {
+    const report = {
       title: this.reportTitle,
       description: this.reportDescription,
       modelers: this.assignedModelers,
       auditors: this.assignedAuditors
-    });
+    };
+
+    this.reportApiService.Create(report).pipe(tap(
+      (response) => {
+        console.log('Draft saved successfully:', response);
+        alert('Draft saved successfully!');
+      },
+      (error) => {
+        console.error('Error saving draft:', error);
+        alert('Failed to save draft. Please try again.');
+      }
+    )).subscribe();
   }
 }

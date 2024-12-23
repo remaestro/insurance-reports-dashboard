@@ -8,7 +8,7 @@ import { tap, catchError } from 'rxjs/operators';
 })
 export class AuthApiService {
   private readonly TOKEN_KEY = 'auth_token';
-  private readonly API_URL = 'https://potential-space-garbanzo-9q5qwprg5qg2x49-5141.app.github.dev/api/auth'; // Replace with your API URL
+  private readonly API_URL = 'http://localhost:5141/api/auth'; // Replace with your API URL
 
   constructor(private http: HttpClient) {}
 
